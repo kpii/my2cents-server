@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Date: Thu, 15 Apr 2010 15:46:08 GMT
+Server: Restlet-Framework/2.0m6
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 01:00:00 CET
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept,User-Agent
+Accept-Ranges: bytes
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+
+{"error":"product not found (invalid EAN)","errorCode":4102}

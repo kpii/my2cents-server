@@ -1,0 +1,9 @@
+%h1 Edit product name
+
+- form_for @product do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.submit "OK"
+
+%p
+  = link_to("Cancel", product_path(@product))

@@ -1,0 +1,26 @@
+development:
+  oauth_consumer_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  oauth_consumer_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  base_url: "https://twitter.com"
+  authorize_path: "/oauth/authenticate"
+  api_timeout: 10
+  oauth_callback: "http://localhost:9292/oauth_callback"
+
+production:
+  oauth_consumer_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  oauth_consumer_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  authorize_path: "/oauth/authenticate"
+  base_url: "https://api.twitter.com"
+  api_timeout: 10
+  oauth_callback: "http://my2cents.example/oauth_callback"
+
+test: &TEST
+  oauth_consumer_key: testkey
+  oauth_consumer_secret: testsecret
+  base_url: "https://twitter.com"
+  authorize_path: "/oauth/authenticate"
+  api_timeout: 10
+  oauth_callback: "http://www.example.com/oauth_callback"
+
+cucumber:
+  <<: *TEST

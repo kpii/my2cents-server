@@ -1,0 +1,44 @@
+%style
+  :sass
+    table
+      border-collapse: collapse
+    tr
+      border: 1px solid grey
+    .status
+      width: 2em
+    .status div
+      width: 30px
+      height: 30px
+      margin: auto
+    .found
+      background-color: green
+    .not_found
+      background-color: grey
+    .blank
+      background-color: white
+
+%h1 Recently created products
+
+%table
+  %tr
+    %th
+    %th
+    %th
+    %th
+    - @headers.each do |header|
+      %th.status= header
+  - @products_and_sources.each do |product, sources|
+    %tr
+      %td= link_to(product.name, admin_product_path(product))
+      %td{:title=>'Scans'}= product.scans.count
+      %td{:title=>'Comments'}= product.comments.count
+      %td{:title=>'Product created at'}= product.created_at
+      - sources.each do |source|
+        %td.status
+          %div{:class => source ? (source.found? ? 'found' : 'not_found') : 'blank', :title => source.andand.found? ? source.name : ''}
+            - if source && source.found? && source.image_url
+              %img{:src=>source.image_url, :width=>'30', :height=>'30'}
+            - else
+              &nbsp;
+
+= will_paginate @products

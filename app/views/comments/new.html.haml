@@ -1,0 +1,19 @@
+%h1
+  New comment
+- form_for(@comment) do |f|
+  = f.error_messages
+  %p
+    = f.label :product_key
+    %br
+    = f.text_field :product_key
+  %p
+    = f.label :body
+    %br
+    = f.text_area :body
+    %br
+    - if logged_in?
+      = check_box_tag :publish_to_twitter
+      %label{ :for => "publish_to_twitter"}Publish comment on Twitter
+  %p
+    = f.submit 'Create'
+  = link_to 'Back', comments_path

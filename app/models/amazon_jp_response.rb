@@ -1,0 +1,2 @@
+class AmazonJpResponse < AmazonResponse
+end

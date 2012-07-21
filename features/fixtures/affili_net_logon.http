@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Date: Fri, 20 Aug 2010 14:44:43 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 216
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><CredentialToken xmlns="http://affilinet.framework.webservices/Svc">4ef2c382-7081-4da1-96ee-49a6a2f2f27a</CredentialToken></s:Body></s:Envelope>

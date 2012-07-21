@@ -1,0 +1,47 @@
+%style
+  :sass
+    #comments li p
+      margin-left: 0
+
+%h1
+  = render :partial => 'users/image', :locals => { :user => @user }
+  = @user.name
+
+%p
+  = user_profile_sentence(@user)
+
+%p
+  = link_to("#{@user.profile_url_source} profile of #{@user.name}", @user.profile_url)
+
+
+- unless @user.scans.empty?
+  %h2 Scans
+  .scans
+    - @user.scans.recent.each do |scan|
+      %p
+        = link_to(scan.product.name, product_path(scan.product))
+        = time_ago_in_words(scan.created_at)
+        ago.
+
+
+%h2 Comments
+= render :partial => "comments/list", :object => @user.comments, :locals => { :hide_user => true }
+
+
+- unless @user.ratings.likes.empty?
+  %h2 Likes
+  .likes
+    - @user.ratings.likes.recent.each do |like|
+      %p
+        = link_to(like.product.name, like.product)
+        = time_ago_in_words(like.created_at)
+        ago.
+
+- unless @user.ratings.dislikes.empty?
+  %h2 Dislikes
+  .dislikes
+    - @user.ratings.dislikes.recent.each do |dislike|
+      %p
+        = link_to(dislike.product.name, dislike.product)
+        = time_ago_in_words(dislike.created_at)
+        ago.

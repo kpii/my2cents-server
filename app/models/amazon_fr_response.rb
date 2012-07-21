@@ -1,0 +1,2 @@
+class AmazonFrResponse < AmazonResponse
+end

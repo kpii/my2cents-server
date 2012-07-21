@@ -1,0 +1,10 @@
+HTTP/1.0 200 OK
+Server: Server
+Connection: Close
+nnCoection: close
+Date: Mon, 19 Apr 2010 23:26:04 GMT
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Vary: Accept-Encoding,User-Agent
+
+<?xml version="1.0" ?><ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2009-03-31"><OperationRequest><HTTPHeaders><Header Name="UserAgent" Value="Ruby/Amazon/AWS 0.7.0"></Header></HTTPHeaders><RequestId>2390479a-7d66-442b-b570-453e487778f3</RequestId><Arguments><Argument Name="Operation" Value="ItemLookup"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument Name="ItemId" Value="10000000001"></Argument><Argument Name="IdType" Value="EAN"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAJGS22KMPWBW5VWAA"></Argument><Argument Name="Timestamp" Value="2010-04-19T23:26:07Z"></Argument><Argument Name="Signature" Value="nLMAnQ4TjduMJIGlW3zZ/jsRDEOUGSja0i4vN9efo1s="></Argument><Argument Name="ResponseGroup" Value="Medium"></Argument><Argument Name="AssociateTag" Value="calibanorg0a-21"></Argument><Argument Name="SearchIndex" Value="All"></Argument><Argument Name="Version" Value="2009-03-31"></Argument></Arguments><RequestProcessingTime>0.0343860000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemLookupRequest><Condition>New</Condition><DeliveryMethod>Ship</DeliveryMethod><IdType>EAN</IdType><MerchantId>Amazon</MerchantId><OfferPage>1</OfferPage><ItemId>10000000001</ItemId><ResponseGroup>Medium</ResponseGroup><ReviewPage>1</ReviewPage><ReviewSort>-SubmissionDate</ReviewSort><SearchIndex>All</SearchIndex><VariationPage>All</VariationPage></ItemLookupRequest><Errors><Error><Code>AWS.InvalidParameterValue</Code><Message>10000000001 is not a valid value for ItemId. Please change this value and retry your request.</Message></Error></Errors></Request></Items></ItemLookupResponse>

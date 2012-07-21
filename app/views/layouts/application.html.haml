@@ -1,0 +1,58 @@
+!!!
+%html
+  %head
+    %title my2cents.mobi
+    = stylesheet_link_tag "main"
+    = stylesheet_link_tag "ui-lightness/jquery-ui-1.8.1.custom"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"
+    = javascript_include_tag "jquery.tweet"
+    = javascript_include_tag "application"
+    = javascript_include_tag "rate"
+
+    %link{:rel=>"shortcut icon", :href=>"/images/favicon.ico"}
+
+    = yield :head
+
+  %body
+    - if flash[:notice]
+      %p.notice= flash[:notice]
+    - if flash[:error]
+      %p.error= flash[:error]
+
+    #header
+      %div
+        %a#logo{:href=>'/'}
+          %img{:src=>"/images/logo.png?3", :alt=>'my2cents.mobi logo', :title=>'my2cents.mobi home'}
+  
+        %p#login
+          - if logged_in?
+            Logged in as
+            = link_to(current_user.name, user_path(current_user), :class => 'profile')
+            = "(admin)" if current_user.admin?
+            = link_to "Log out", logout_path, :class => 'action'
+          - else
+            = link_to "Login with Twitter", login_path, :class => 'action'
+            = link_to "Login with Facebook", facebook_login_path, :class => 'action'
+  
+        %ul#navigation
+          %li.divider
+          %li= active_link_to "Get the app", download_path
+          %li.divider
+          %li= active_link_to "Feedback", feedback_path
+          %li.divider
+          %li= active_link_to "About", about_path
+          %li.divider
+
+    %br.clear
+
+    #content
+      - if android_browser?
+        %p
+          Install the app
+          = link_to "directly from the android market", "market://search?q=pname:mobi.my2cents"
+      = yield
+
+    #footer
+      %p
+        &copy; 2010 my2cents, ETH Z&uuml;rich

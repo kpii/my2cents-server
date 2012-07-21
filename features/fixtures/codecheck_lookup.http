@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Date: Thu, 15 Apr 2010 13:13:21 GMT
+Server: Restlet-Framework/2.0m6
+Pragma: No-cache
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 01:00:00 CET
+Vary: Accept-Charset,Accept-Encoding,Accept-Language,Accept,User-Agent
+Accept-Ranges: bytes
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+
+{"result":{"addInfo":"Wasser, geschälte Sojabohnen (6,4%), roher Rohrzucker, Dextrose, Calciumcarbonat, Aroma, Meersalz, Säureregulator: Monokaliumphosphat, Stabilisator: Gellan, Karottenextrakt, Vitamine B2 und B12\r\nLaktosefrei, Kuhmilcheiweißfrei, ohne Zutaten tierischen Ursprungs\r\n**Cholesterinspiegelsenkend**\r\nAls Teil einer ausgewogenen und vielseitigen Ernährung kann Sojaeiweiß zur Senkung des Cholesterinspiegel beitragen.Wissenschaftliche Studien haben bewiesen, dass sich der Verzehr von 25g Sojaeiweiß täglich positiv auf den Cholesterinspiegel auswirken kann.","chgDate":"2010-01-16 03:19:39.0","label":"Gentechnik-Frei","orig":"Belgien","ingrList":[],"id":370256,"ean":5411188081852,"imgId":40237,"subtit":"Soja-Drinks","manu":"8560 Wevelgem, vlamingstraat   Belgien","ingr":"Sojamilch\r\nKalzium 120 mg, Vitamin B2\t 240 µg, Vitamin B12 0,15 µg","name":"alpro soya","catName":"Sojamilch","quant":"1 Liter","gs1Manu":"ALPRO N.V., Vlamingstraat 28, 8560 WEVELGEM, Belgien","catId":22053,"ingrDesc":[{"text":"Sojamilch\r\nKalzium 120 mg, Vitamin B2\t 240 µg, Vitamin B12 0,15 µg"}]}}

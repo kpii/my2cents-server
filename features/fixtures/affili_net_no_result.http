@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Date: Fri, 20 Aug 2010 14:54:13 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Content-Length: 443
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body><ProductSearchResult xmlns="http://affilinet.framework.webservices/Svc" xmlns:a="http://affilinet.framework.webservices/types/ProductService" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><a:Records>0</a:Records><a:TotalRecords>0</a:TotalRecords><a:TotalPages>0</a:TotalPages><a:CurrentPage>0</a:CurrentPage><a:Products/></ProductSearchResult></s:Body></s:Envelope>

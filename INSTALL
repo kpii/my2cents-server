@@ -1,0 +1,9 @@
+To run this application you will need a bunch of gems installed on
+your system. The simplest way to get them is:
+
+rake gems:install
+
+To see if everything is working run:
+
+rake cucumber
+rake spec

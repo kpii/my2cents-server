@@ -1,0 +1,117 @@
+- content_for :head do
+  = javascript_include_tag "root"
+
+- unless mobile_browser?
+  %h1
+    my2cents &mdash; share your opinion on products
+
+%div#activity
+  - unless mobile_browser?
+    %img{:src => "/images/hand1.png", :alt => "Scan a product's barcode", :title => "Scan a product's barcode", :width => 248, :height => 147}
+    %img{:src => "/images/hand2.png", :alt => "Get opinions and recommendations from your friends and others", :title => "Get opinions and recommendations from your friends and others", :width => 165, :height => 147}
+    %img{:src => "/images/hand3.png", :alt => "Share your own opinion", :title => "Share your own opinion", :width => 165, :height => 147}
+
+    %ol.intro
+      %li.one
+        %span
+          Scan a product's barcode
+      %li.two
+        %span
+          Find out what others think about the product
+      %li.three
+        %span
+          Share your own opinion
+    %br
+
+  %ol
+    %h1
+      Recent opinions
+   
+    - @products.each do |product|
+      %li.product{:id => dom_id(product)}
+        %h3
+          = link_to(product.name, product_path(product))
+          - if product.image_url
+            %a{:href => product_path(product)}
+              %img{:src => product.image_url, :alt => product.name, :title => product.name}
+
+
+        - if product.comments.count > 3
+          %p.more
+            = link_to("See all #{product.comments.count} comments", product_path(product))
+
+
+        - reset_cycle
+        %ol
+          - product.comments.recent.first(3).reverse.each do |comment|
+            - side = 'left'
+            %li{:id => dom_id(comment), :class => side}
+              = render :partial => 'users/image', :locals => { :user => comment.user }
+              
+              %img.tip{:src => "/images/speech_bubble_#{side}.png"}
+              
+              %p
+                != auto_link(h(comment.body))
+                %br
+                %span.extra
+                  = link_to("#{time_ago_in_words(comment.created_at)} ago", comment_path(comment), :class => 'time')
+                  by
+                  = link_to(comment.user.name, user_path(comment.user))
+
+          %li.new_comment{:class => 'left'}
+       
+            %img.tip{:src => "/images/speech_bubble_left.png"}
+            %p
+              Add a comment ...
+            - form_for(product.comments.new) do |f|
+              = f.hidden_field :product_id
+              = f.text_area :body, :rows => 2
+              - if logged_in_with_twitter?
+                %br
+                = check_box_tag :publish_to_twitter
+                %label{:for=>"publish_to_twitter"} Publish comment on Twitter
+              %br
+              = f.submit "Send"
+              - unless logged_in?
+                %span.extra 
+                  Comments with links are only possible after login.
+
+#related
+
+  %h2
+    What is my2cents?
+  %p
+    my2cents is a mobile app to share opinions on products. Find out what your friends and others think about a product and share your own opinion.
+
+  %p
+    %iframe.youtube-player{:allowfullscreen => "", :frameborder => "0", :height => "150", :src => "http://www.youtube.com/embed/r0WoOIp-Ihg?rel=0", :title => "YouTube video player", :type => "text/html", :width => "213"}
+
+  %p
+    %a{:href => "http://itunes.apple.com/us/app/my2cents-mobi/id353948689"}
+      %img{:src=>"/images/appstore.png", :alt=>'my2cents.mobi in the iTunes App Store', :title=>'my2cents.mobi iPhone app'}
+
+  %p
+    The my2cents app is available for Android and iPhone. Tell your friends and others if you like or dislike a product with just one click.
+
+  %p
+    %a{:href => download_path} Get the app for Android or iPhone
+
+  %h2 So far on my2cents
+  %p
+    = Comment.count
+    comments on
+    = Comment.count("product_id", :distinct => true)
+    products
+
+  %h2 my2cents on Twitter
+  %p
+    %a{:href => "http://twitter.com/my2centsmobi"} Follow my2centsmobi on Twitter
+  #tweets
+
+%br.clear
+
+%p
+  = link_to("View older comments", comments_path)
+  
+%p
+  = link_to "Add a product", new_scan_path

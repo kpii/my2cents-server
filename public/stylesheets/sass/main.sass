@@ -1,0 +1,334 @@
+body
+  margin: 0
+  font-family: verdana, arial, sans-serif
+  font-size: 0.9em
+
+#content
+  margin: 0 auto
+  padding: 0
+  max-width: 840px
+
+.extra
+  color: grey
+  font-size: 9px
+
+h1, h2, h3, p, form, dl
+  margin-left: 0.2em
+  margin-right: 0.2em
+
+h1, h2
+  font-family: verdana
+  color: #799fc6
+
+h1
+  font-size: 1.6em
+
+h2
+  font-size: 1.3em
+  font-weight: 110
+
+h3
+  font-size: 1.2em
+  font-weight: normal
+
+a
+  color: #6699cc
+
+  &:hover
+    color: #416D83
+
+#header
+  margin: 0
+  padding: 0
+  height: 74px
+  background: url('/images/header_bg.png') repeat-x top
+  div
+    margin: 0 auto
+    max-width: 840px
+
+#logo
+  margin: 4px 30px 0 -50px
+  float: left
+
+#login, #login a
+  color: white
+
+#login
+  margin: 0
+  padding: 7px 0
+  text-align: right
+  height: 16px
+  font-size: smaller
+  a
+    text-decoration: none
+  a.action
+    margin-left: 0.5em
+
+#navigation
+  list-style-type: none
+  height: 54px
+  margin: 0
+  padding: 0
+  li
+    height: 54px
+    float: left
+    margin: 0
+    padding: 0
+  a
+    display: block
+    height: 100%
+    text-decoration: none
+    padding: 12px 18px
+    margin: 0
+    color: grey
+    &:hover
+      text-decoration: none
+  a.active
+    background: url('/images/header_bg_active.png') repeat-x top
+  li.divider
+    background: url('/images/header_bg_divider.png') no-repeat top
+    width: 2px
+    padding: 0
+    margin: 0
+
+#footer
+  margin-top: 5em
+  border-top: solid 1px lightgrey
+  p
+    margin: 1em auto
+    max-width: 840px
+    text-align: right
+    color: grey
+    font-size: smaller
+
+.notice
+  position: fixed
+  top: 0
+  left: 10em
+  font-size: larger
+  margin: 0
+  padding: 0.8em
+  background: yellow
+  z-index: 100
+
+.error
+  font-weight: bold
+  color: red
+  border: 3px solid red
+  padding: 0.2em
+
+#activity
+  $bubble_radius: 8px
+  float: left
+  width: 70%
+  list-style: none
+  padding: 0
+  margin: 0
+  ol.intro
+    list-style: decimal inside
+    margin-top: 1em
+    margin-left: 1em
+    font-family: verdana
+    color: #799fc6
+    li
+      font-size: 1.5em
+      font-weight: bold
+      margin-top: 0.3em
+      span
+        font-size: 0.8em
+        font-weight: normal
+        color: black
+    li.two
+      margin-left: 15%
+    li.three
+      float: right
+  li.product
+    border-top: 1px solid #79a0c6
+    background: #dee7f1
+    margin-bottom: 1em
+    padding-bottom: 5px
+  h3
+    position: relative
+    background: #b5cbe0
+    margin: 0
+    padding: 1em
+    font-weight: normal
+    a
+      text-decoration: none
+      color: #2D5884
+    img
+      position: absolute
+      right: 0
+      top: 0
+      max-width: 50px
+      max-height: 50px
+      border-right: 1px solid #79a0c6
+      border-bottom: 1px solid #79a0c6
+  ol
+    list-style: none
+    padding: 0
+    margin: 0
+  li.left
+    img.avatar
+      float: left
+      margin-left: 5px
+    img.tip
+      float: left
+      margin-left: -4px
+    p
+      margin-left: 56px
+      -moz-border-radius-topleft: $bubble_radius
+      -webkit-border-top-left-radius: $bubble_radius
+      -moz-border-radius-bottomleft: $bubble_radius
+      -webkit-border-bottom-left-radius: $bubble_radius
+  li.right
+    img.avatar
+      float: right
+      margin-right: 5px
+    img.tip
+      float: right
+      margin-right: -4px
+    p
+      margin-right: 56px
+      -moz-border-radius-topright: $bubble_radius
+      -webkit-border-top-right-radius: $bubble_radius
+      -moz-border-radius-bottomright: $bubble_radius
+      -webkit-border-bottom-right-radius: $bubble_radius
+  img.tip
+    position: relative
+    top: 18px
+
+  ol li p
+    background: white
+    border: 1px solid #b5cbe0
+    min-height: 37px
+    padding: 5px 10px
+    margin: 5px
+    font-size: 12px
+    line-height: 1.5em
+  .extra a
+    color: grey
+  .extra a.time
+    text-decoration: none
+  p.more
+    margin: 10px 5px
+    font-size: 0.8em
+    a
+      color: #2D5884
+  li.new_comment
+    p
+      min-height: 18px
+      color: grey
+      margin-left: 15px
+    img.tip
+      top: 9px
+      margin-left: 8px
+    form
+      display: none
+      margin: 5px
+      padding-right: 5px
+      textarea
+        width: 100%
+
+#related
+  width: 28%
+  float: right
+  h2
+    border-top: 1px solid #79a0c6
+    background: #ECF1F6
+    margin: 0
+    padding: 10px 10px 0 10px
+    font-size: 15px
+    color: #58738F
+  p
+    background: #ECF1F6
+    margin: 0
+    padding: 10px
+    font-size: 12px
+    line-height: 1.5em
+  #tweets
+    background: #ECF1F6
+    margin: 0
+    ul
+      margin: 0
+      padding: 10px
+      list-style: none
+    img
+      display: none
+    li
+      font-size: 12px
+      line-height: 1.5em
+      margin-top: 10px
+
+#comments
+  list-style-type: none
+  padding: 0
+  margin: 0
+  border-bottom: solid 1px #deecf3
+  background-color: #ffffff
+
+  li
+    border-top: solid 5px #deecf3
+    clear: both
+    min-height: 50px
+    padding: 10px 0 10px 10px
+
+    img
+      float: left
+
+    p
+      margin: 0 0 0 65px
+
+a.time
+  text-decoration: none
+  color: grey
+  font-size: smaller
+a.time:hover
+  text-decoration: underline
+
+form.new_comment
+  margin-bottom: 1em
+
+img
+  border: none
+
+.pagination
+  margin: 1em 0
+
+.disclaimer
+  font-size: 0.7em
+
+#rating
+  width: 200px
+  float: right
+  margin-top: 1em
+  p
+    margin: 0.1em 0
+    font-size: 0.8em
+  .self
+    font-weight: bold
+  button
+    width: 50%
+  .like.ui-state-active
+    color: green
+    font-weight: bold
+  .dislike.ui-state-active
+    color: red
+    font-weight: bold
+  button
+    height: 60px
+    padding-top: 40px
+  button.like
+    background: url('/images/thumbs_up.png') no-repeat top
+  button.dislike
+    background: url('/images/thumbs_down.png') no-repeat top
+  button.like.ui-state-active
+    background: url('/images/thumbs_up_selected.png') no-repeat top
+  button.dislike.ui-state-active
+    background: url('/images/thumbs_down_selected.png') no-repeat top
+
+br.clear
+  clear: both
+
+p.unseen
+  font-weight: bold

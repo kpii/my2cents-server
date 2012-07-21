@@ -1,0 +1,19 @@
+- if not list.empty?
+  %ol#comments
+    - list.sort_by(&:created_at).reverse.each do |comment|
+      %li{:id => dom_id(comment)}
+        - unless defined?(hide_user)
+          = render :partial => 'users/image', :locals => { :user => comment.user }
+
+        %p
+          - unless defined?(hide_user)
+            %strong.user_name
+              = link_to(comment.user.name, user_path(comment.user))
+
+          - unless defined?(hide_product)
+            on
+            != link_to(comment.product.name, product_path(comment.product)) + ":"
+
+          != auto_link(h(comment.body))
+          %br
+          = link_to("#{time_ago_in_words(comment.created_at)} ago", comment_path(comment), :class => 'time')

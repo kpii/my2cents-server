@@ -1,0 +1,10 @@
+- unless @rating.new_record?
+  %p.self
+    - if @rating.like?
+      You like this product
+    - elsif @rating.dislike?
+      You dislike this product
+
+%p
+  = pluralize(@product.ratings.likes.count, "Like")
+  = pluralize(@product.ratings.dislikes.count, "Dislike")

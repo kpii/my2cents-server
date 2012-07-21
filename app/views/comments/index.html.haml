@@ -1,0 +1,25 @@
+- content_for :head do
+  = javascript_include_tag "comments"
+
+%div#activity
+  - unless mobile_browser?
+    %img{:src => "/images/hand1.png", :alt => "Scan a product's barcode", :title => "Scan a product's barcode", :width => 248, :height => 147}
+    %img{:src => "/images/hand2.png", :alt => "Get opinions and recommendations from your friends and others", :title => "Get opinions and recommendations from your friends and others", :width => 165, :height => 147}
+    %img{:src => "/images/hand3.png", :alt => "Share your own opinion", :title => "Share your own opinion", :width => 165, :height => 147}
+
+    %ol.intro
+      %li.one
+        %span
+          Scan a product's barcode
+      %li.two
+        %span
+          Find out what others think about the product
+      %li.three
+        %span
+          Share your own opinion
+    %br
+    %h1 Recent opinions
+
+= render :partial => 'comments/list', :object => @comments
+
+= will_paginate @comments

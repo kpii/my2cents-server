@@ -1,0 +1,11 @@
+= render :partial => 'users/image', :locals => { :user => @comment.user }
+
+%img.tip{:src => "/images/speech_bubble_left.png"}
+
+%p
+  != auto_link(h(@comment.body))
+  %br
+  %span.extra
+    = link_to("#{time_ago_in_words(@comment.created_at)} ago", comment_path(@comment), :class => 'time')
+    by
+    = link_to(@comment.user.name, user_path(@comment.user))

@@ -1,0 +1,17 @@
+%h1 A Scan
+
+%p
+  - if @scan.product
+    On product:
+    = link_to(@scan.product.name, product_path(@scan.product))
+  - else
+    Searching for product, please wait.
+
+%dl
+  %dt GTIN
+  %dd= @scan.gtin
+  %dt Created at
+  %dd
+    = time_ago_in_words(@scan.created_at)
+    ago
+

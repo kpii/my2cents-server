@@ -1,0 +1,101 @@
+Feature: Scan a product - from the point of view of a client user
+
+  As a user of the my2cents app on a mobile phone
+  I want to scan a barcode to find the actual product that I am holding in my hand
+  So that I my list of products is correct and my comments are associated correctly.
+
+  These scenarios describe how we think a client app should be
+  implemented. They are not real executable cucumber scenarios but
+  only for documentation. See the corresponding file
+  features/api/scan.feature for the API point of view for each
+  scenario.
+
+
+  Background
+    Given my name is Franz
+
+  Scenario: Scan a barcode, product not known, simply add a comment
+    Given there is no info on 12345
+    When I scan 12345
+    Then I should see the product detail view
+    And I should see "Unknown product" for "name"
+    And I should see a comment field
+    And I should see a link "wrong product info"
+    When I look at the public activity stream
+    Then I should see "Franz scanned Unknown Product (12345)"
+
+  Scenario: Scan a barcode, product not known, add product data
+    Given there is no info on 12345
+    When I scan 12345
+    Then I should see the product detail view
+    And the product title should be "Unknown product"
+    When I follow link "wrong product info"
+    And I fill in "Taft Haargel" for "name"
+    And I press "OK"
+    Then I should see the product detail view
+    And the product title should be "Taft Haargel"
+    And I should see a comment field
+    When I look at the public activity stream
+    Then I should see "Franz scanned Taft Haargel"
+
+  Scenario: Scan a barcode, product known and correct
+    Given 12345 is known as "Alpro Soya"
+    When I scan 12345
+    Then I should see the product detail view
+    And the product title should be "Alpro Soya"
+    And I should see a comment field
+    When I look at the public activity stream
+    Then I should see "Franz scanned Alpro Soya"
+
+  Scenario: Scan a barcode, product known and not correct, no other options
+    Given 12345 is known as "Seife 3000"
+    And there is a comment "Washes well" on the product "Seife 3000"
+    When I scan 12345
+    Then I should see the product view
+    And the product title should be "Seife 3000"
+    And I should see the comment "Washes well"
+    When I follow "wrong product info"
+    Then I should see a name field
+    When I enter "Club Mate"
+    And I press "OK"
+    Then I should see the product view
+    And the product title should be "Club Mate"
+    And I should not see the comment "Washes well"
+    And from now on 12345 should be known as "Seife 3000" and "Club Mate"
+    When I look at the public activity stream
+    Then I should see "Franz scanned Club Mate"
+
+  Scenario: Scan a barcode, product known and not correct, other options, one of these correct
+    Given 12345 is known as "Seife 3000" and "Club Mate"
+    And there is a comment "Washes well" on the product "Seife 3000"
+    And there is a comment "Great drink" on the product "Club Mate"
+    When I scan 12345
+    Then I should see "Seife 3000"
+    And I should see the comment "Washes well"
+    When I follow "wrong product info"
+    Then I should see a list of products
+    And I should see "Club Mate"
+    When I select "Club Mate"
+    Then I should see the product view
+    Then I should see the comment "Great drink"
+    But I should not see the comment "Washes well"
+    When I look at the public activity stream
+    Then I should see "Franz scanned Club Mate"
+
+  Scenario: Scan a barcode, product known and not correct, other options, none of these correct
+    Given 12345 is known as "Seife 3000" and "Club Mate"
+    When I scan 12345
+    Then I should see the product view
+    And the product title should be "Seife 3000"
+    When I follow "wrong product info"
+    Then I should see a list of products
+    When I follow "None of these options is correct"
+    Then I should see a form with a name field
+    And the name field should be prefilled with "Unknown product"
+    And I enter "Shaving foam" for name
+    And I press "OK"
+    Then I should see the product view
+    And the product title should be "Shaving foam"
+    When I look at the public activity stream
+    Then I should see "Franz scanned Shaving foam"
+

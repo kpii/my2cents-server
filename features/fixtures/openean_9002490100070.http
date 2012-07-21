@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Date: Tue, 04 May 2010 21:55:34 GMT
+Server: Apache/2.2.14 (Fedora)
+X-Powered-By: PHP/5.3.2
+Content-Length: 209
+Connection: close
+Content-Type: text/plain
+
+error=0
+---
+name=Red Bull with Ümlaut
+detailname=Red Bull Energy Drink
+vendor=Red Bull
+maincat=Getränke, Alkohol
+subcat=Energy Drinks
+maincatnum=11
+subcatnum=2
+contents=0
+origin=&Ouml;sterreich
+descr=
+validated=100 %
+---

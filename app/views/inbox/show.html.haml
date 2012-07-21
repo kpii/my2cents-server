@@ -1,0 +1,32 @@
+%h1 Inbox
+
+- previous_was_unseen = false
+
+- @events.each do |event|
+  - if current_user.has_seen?(event) && previous_was_unseen
+    %hr
+  - previous_was_unseen = ! current_user.has_seen?(event)
+
+  %p{:class => current_user.has_seen?(event) ? 'seen' : 'unseen'}
+    = event.user.name
+
+    - if Comment === event
+      on
+      != link_to(event.product.name, product_path(event.product)) + ":"
+      %q!= auto_link(h(event.body))
+      %br
+      = link_to("#{time_ago_in_words(event.created_at)} ago", comment_path(event), :class => 'time')
+
+    - elsif Rating === event
+      - if event.like?
+        liked
+      - elsif event.dislike?
+        disliked
+
+      = link_to(event.product.name, product_path(event.product))
+      = link_to("#{time_ago_in_words(event.created_at)} ago", comment_path(event), :class => 'time')
+
+    - elsif Scan === event
+      scanned
+      = link_to(event.product.name, product_path(event.product))
+      = link_to("#{time_ago_in_words(event.created_at)} ago", comment_path(event), :class => 'time')

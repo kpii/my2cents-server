@@ -1,0 +1,18 @@
+production:
+  api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  secret_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+development:
+  api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  secret_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  tunnel:
+    public_host_username: tunnel_user
+    public_host: tunnel.example
+    public_port: 9292
+    local_port: 3000
+
+test: &TEST
+  api_key: xxxxxxxxxxxxxxxxxxxxxx
+  secret_key: xxxxxxxxxxxxxxxxxxxxxx
+
+cucumber:
+  <<: *TEST

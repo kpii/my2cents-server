@@ -1,0 +1,71 @@
+#rating
+  - if @rating.neutral?
+    %p.question Do you like this product?
+
+  - form_for([@product, @rating], :url => product_rating_path(@product), :html => { :method => :put }) do |form|
+    = form.radio_button :value, ""
+    %label{:for => 'rating_value_'}
+      Neutral
+    = form.radio_button :value, "like"
+    %label{:for => 'rating_value_like'}
+      Like
+    = form.radio_button :value, "dislike"
+    %label{:for => 'rating_value_dislike'}
+      Dislike
+    = form.submit "Rate"
+  
+  #rating_status
+    = render :partial => 'rating'
+
+%h1
+  - if @product.image_url
+    %img{:src => @product.image_url, :alt => @product.name, :title => @product.name}
+  = @product.name
+  
+- if admin?
+  %p
+    = link_to("(admin)", admin_product_path(@product))
+
+- if @product.unknown?
+  %p
+    = link_to("Set name", edit_product_path(@product))
+
+%br.clear
+
+- form_for([@product, @comment], :url => comments_path) do |form|
+  - if @product.new_record?
+    = hidden_field_tag 'comment[key]', @product.key
+  - else
+    = form.hidden_field :product_id
+  = form.text_area :body, :rows => 2, :cols => 60
+  - if logged_in_with_twitter?
+    %br
+    = check_box_tag :publish_to_twitter
+    %label{:for=>"publish_to_twitter"} Publish comment on Twitter
+  %br
+  = form.submit "Create comment"
+  - unless logged_in?
+    %span.extra 
+      Comments with links are only possible after login.
+
+= render :partial => 'comments/list', :object => @product.comments, :locals => { :hide_product => true }
+
+- if @product.codecheck_source
+  %p
+    Product information from
+    = link_to("codecheck.info", @product.codecheck_source.url)
+
+- if @product.affili_source
+  %p
+    Product information from
+    = link_to(@product.affili_source.shopname, @product.affili_source.url)
+
+- if @product.amazon_source
+  %p
+    Product information from
+    = link_to("Amazon", @product.amazon_source.url)
+
+  %p.disclaimer
+    Certain content that appears on this site comes from Amazon
+    Services LLC. This content is provided <q>as is</q> and is subject to
+    change or removal at any time.

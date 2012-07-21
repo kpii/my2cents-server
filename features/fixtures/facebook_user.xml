@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users_getInfo_response xmlns="http://api.facebook.com/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://api.facebook.com/1.0/ http://api.facebook.com/1.0/facebook.xsd" list="true">
+  <user>
+    <about_me/>
+    <activities/>
+    <affiliations list="true"/>
+    <birthday>1. Februar 1974</birthday>
+    <books/>
+    <current_location>
+      <city>Vienna</city>
+      <state>Wien</state>
+      <country>Austria</country>
+      <zip/>
+    </current_location>
+    <education_history list="true"/>
+    <first_name>Gonzo</first_name>
+    <hometown_location xsi:nil="true"/>
+    <hs_info>
+      <hs1_name/>
+      <hs2_name/>
+      <hs1_id>0</hs1_id>
+      <hs2_id>0</hs2_id>
+    </hs_info>
+    <interests/>
+    <is_app_user>1</is_app_user>
+    <last_name>Gogo</last_name>
+    <meeting_for list="true"/>
+    <meeting_sex list="true"/>
+    <movies/>
+    <music/>
+    <name>Gonzo Gogo</name>
+    <notes_count xsi:nil="true"/>
+    <pic>http://profile.ak.fbcdn.net/hprofile-ak-sf2p/hs196.snc3/23002_532193283_4227_s.jpg</pic>
+    <pic_big>http://profile.ak.fbcdn.net/v22942/469/57/n532193283_231.jpg</pic_big>
+    <pic_small>http://profile.ak.fbcdn.net/hprofile-ak-sf2p/hs196.snc3/23002_532193283_4227_t.jpg</pic_small>
+    <political/>
+    <profile_update_time>1263604706</profile_update_time>
+    <quotes/>
+    <relationship_status>Verheiratet</relationship_status>
+    <religion/>
+    <sex xsi:nil="true"/>
+    <significant_other_id xsi:nil="true"/>
+    <status>
+      <message>herbstradio(.org), geh noch nicht fort! bleib f..r immer da!</message>
+      <time>1267395008</time>
+      <status_id>356199781063</status_id>
+    </status>
+    <timezone>1</timezone>
+    <tv/>
+    <uid>1566588090</uid>
+    <wall_count>46</wall_count>
+    <work_history list="true">
+      <work_info>
+        <location>
+          <city/>
+          <state/>
+          <country/>
+        </location>
+        <company_name>Myself</company_name>
+        <position>Freelance Software Developer</position>
+        <description/>
+        <start_date>0000-00</start_date>
+        <end_date/>
+      </work_info>
+    </work_history>
+    <pic_square>http://profile.ak.fbcdn.net/hprofile-ak-sf2p/hs196.snc3/23002_532193283_4227_q.jpg</pic_square>
+    <has_added_app>1</has_added_app>
+    <email_hashes list="true"/>
+    <locale>de_DE</locale>
+    <family list="true"/>
+    <profile_url>http://www.facebook.com/dertil</profile_url>
+    <username>dertil</username>
+    <proxied_email>apps+333170132498.532193283.c2a09326ee517f0a1f83847ba65f01b6@proxymail.facebook.com</proxied_email>
+    <pic_big_with_logo>http://external.ak.fbcdn.net/safe_image.php?logo&amp;d=6fcd44474cfa2b3d5c4614d1419fe0fd&amp;url=http%3A%2F%2Fprofile.ak.fbcdn.net%2Fv22942%2F469%2F57%2Fn532193283_231.jpg&amp;v=5</pic_big_with_logo>
+    <pic_small_with_logo>http://external.ak.fbcdn.net/safe_image.php?logo&amp;d=c5f83f101f87258c250d7017fcae2fdd&amp;url=http%3A%2F%2Fprofile.ak.fbcdn.net%2Fhprofile-ak-sf2p%2Fhs196.snc3%2F23002_532193283_4227_t.jpg&amp;v=5</pic_small_with_logo>
+    <pic_square_with_logo>http://external.ak.fbcdn.net/safe_image.php?logo&amp;d=89a31d3b287bd0b3e265d05a4319e3f4&amp;url=http%3A%2F%2Fprofile.ak.fbcdn.net%2Fhprofile-ak-sf2p%2Fhs196.snc3%2F23002_532193283_4227_q.jpg&amp;v=5</pic_square_with_logo>
+    <pic_with_logo>http://external.ak.fbcdn.net/safe_image.php?logo&amp;d=12c7a60c18225137bc536ae1e5d37f77&amp;url=http%3A%2F%2Fprofile.ak.fbcdn.net%2Fhprofile-ak-sf2p%2Fhs196.snc3%2F23002_532193283_4227_s.jpg&amp;v=5</pic_with_logo>
+    <birthday_date>12/25/1974</birthday_date>
+    <online_presence>active</online_presence>
+    <website>http://tils.net</website>
+    <is_blocked>0</is_blocked>
+    <allowed_restrictions>alcohol</allowed_restrictions>
+    <verified>1</verified>
+    <profile_blurb>Good old times, bad old times. (by the way, my email address is tils@tils.net )</profile_blurb>
+    <email>apps+333170132498.532193283.c2a09326ee517f0a1f83847ba65f01b6@proxymail.facebook.com</email>
+  </user>
+</users_getInfo_response>

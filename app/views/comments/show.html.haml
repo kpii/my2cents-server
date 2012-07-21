@@ -1,0 +1,16 @@
+%h1
+  - if @comment.user
+    = link_to(@comment.user.name, user_path(@comment.user))
+  - else
+    Anonymous
+  on
+  = @comment.product.name
+
+%q!= auto_link(h(@comment.body))
+
+%p
+  = link_to("#{time_ago_in_words(@comment.created_at)} ago", comment_path(@comment), :class => 'time')
+
+- if logged_in? && current_user.admin?
+  - form_for(:comment, :html => { :method => "delete" }) do |form|
+    = form.submit("Delete")

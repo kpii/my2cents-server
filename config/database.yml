@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  database: my2cents_development
+
+test: &TEST
+  adapter: postgresql
+  database: my2cents_test
+  min_messages: warning
+
+staging:
+  adapter: postgresql
+  username: my2cents
+  database: my2cents_production
+
+production:
+  adapter: postgresql
+  username: my2cents
+  database: my2cents_production
+
+cucumber:
+  <<: *TEST

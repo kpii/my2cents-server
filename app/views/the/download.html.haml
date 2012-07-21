@@ -1,0 +1,36 @@
+%style
+  :sass
+    img.qr
+      float: right
+      margin-top: -20px
+
+%h1 Get the app
+
+my2cents is available for Android and iPhone.
+
+%h2 iPhone
+
+%p 
+  %a{:href => "http://itunes.apple.com/us/app/my2cents-mobi/id353948689"}
+    %img.qr{:src=>"/images/appstorew.png", :alt=>'my2cents.mobi in the iTunes App Store', :title=>'my2cents.mobi iPhone app'}
+
+%p 
+  my2cents.mobi is available for iPhone in the 
+  != link_to("iTunes App Store", "http://itunes.apple.com/us/app/my2cents-mobi/id353948689")
+
+
+%h2 Android
+
+
+- if android_browser?
+  %p
+    The latest version of my2cents for Android is available from the Android market:
+    != link_to("my2cents in the Android market", "market://details?id=mobi.my2cents") + "."
+
+- else 
+  %p
+    %img.qr{:src=>"/images/qr.png", :alt=>'my2cents on the Android market', :title=>'my2cents android app'}
+  %p
+    The latest version of my2cents for Android is available from the Android market. Search for my2cents in the market app.
+  %p
+    You can also scan the QR code on the right with your Android phone or visit this page with your Android browser.

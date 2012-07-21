@@ -1,0 +1,8 @@
+%h1 Scan a product
+
+- form_for @scan do |f|
+
+  = f.label :gtin
+  = f.text_field :gtin
+
+  = f.submit "Create"

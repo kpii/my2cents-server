@@ -1,0 +1,2 @@
+class AmazonDeResponse < AmazonResponse
+end

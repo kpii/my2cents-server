@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Date: Tue, 04 May 2010 19:54:27 GMT
+Server: Apache/2.2.14 (Fedora)
+X-Powered-By: PHP/5.3.2
+Content-Length: 575
+Connection: close
+Content-Type: text/plain
+
+<FONT COLOR='blue'>Achtung: Zu dieser EAN existieren derzeit keine weiteren Stammdaten! Sie k&ouml;nnen jedoch beim Ausbau der Datenbank mithelfen: Wenn Sie den Button 'Bearbeiten' bet&auml;tigen, haben Sie Zugriff auf den Datensatz und k&ouml;nnen z.B. einen besser passenden, allgemeinen Produktnamen vergeben und das Produkt in eine Kategorie einordnen.</FONT><BR><BR>error=0
+---
+name=
+detailname=Poland Spring bottled water sport top (no deposit)
+vendor=
+maincat=
+subcat=
+maincatnum=-1
+subcatnum=
+contents=
+origin=USA und Kanada
+descr=700ml / 7.7 FL OZ
+validated=0 %
+---

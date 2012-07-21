@@ -1,0 +1,24 @@
+%h1 
+  Admin Product Info for
+  = @product.key
+
+%p
+  = link_to(@product.name, product_path(@product))
+  = link_to("Admin all Products", admin_products_path)
+
+%dl
+  %dt Created at
+  %dd= @product.created_at
+
+- @product.sources.each do |source|
+
+  %h2= source.class
+
+  %dl
+    %dt Created at
+    %dd= source.created_at
+    - if source.found?
+      %dt Name
+      %dd= source.name
+      %dt Image URL
+      %dd= source.image_url
