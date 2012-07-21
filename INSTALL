@@ -7,3 +7,5 @@ To see if everything is working run:
 
 rake cucumber
 rake spec
+
+The code is known to work with Rails 2.3.8 and Ruby 1.8.7.
