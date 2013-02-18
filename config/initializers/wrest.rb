@@ -1,1 +1,1 @@
-Wrest.logger = ActiveRecord::Base.logger
+#Wrest.logger = ActiveRecord::Base.logger
